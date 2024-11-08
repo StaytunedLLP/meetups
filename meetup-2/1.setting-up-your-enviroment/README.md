@@ -22,7 +22,7 @@ pipelines.
 ## Commands
 
 ```bash
-dagger function -m meetup-2/1.setting-up-your-enviroment
+dagger functions -m meetup-2/1.setting-up-your-enviroment
 ```
 
 ```bash
