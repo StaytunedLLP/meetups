@@ -14,6 +14,11 @@ pipelines.
 1. Install the necessary dependencies.
 2. Run the Dagger pipeline to ensure everything is set up correctly.
 
+## Links
+
+- [Docker](https://docs.docker.com/engine/install/)
+- [Dagger](https://docs.dagger.io/install/)
+
 ## Commands
 
 ```bash
