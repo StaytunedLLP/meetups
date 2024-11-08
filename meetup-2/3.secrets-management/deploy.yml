@@ -1,4 +1,4 @@
-name: meetup-2/4.secrets-management
+name: meetup-2/3.secrets-management
 
 on:
   push:
@@ -21,5 +21,5 @@ jobs:
         uses: dagger/dagger-for-github@v6
         with:
           verb: call
-          module: meetup-2/4.secrets-management
-          args: deploy --token="${{DENO_DEPLOY_TOKEN}}" --prod=true --source=meetup-2/4.secrets-management/project-deno
+          module: meetup-2/3.secrets-management
+          args: deploy --token="${{DENO_DEPLOY_TOKEN}}" --prod=true --source=meetup-2/3.secrets-management/project-deno

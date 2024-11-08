@@ -1,21 +1,26 @@
 import {
+  argument,
+  Container,
   dag,
   Directory,
   func,
   object,
+  Service,
+  Secret
 } from "@dagger.io/dagger";
 
 @object()
-class Demo3 {
+class Demo4 {
   @func()
   async deploy(
     @argument({ defaultPath: "/" }) source: Directory,
-    // token: Secret,
+    token: Secret,
+    prod: boolean
   ): Promise<string> {
     const pipelineContainer = dag
       .container()
       .from("denoland/deno:alpine")
-      // .withSecretVariable("DENO_DEPLOY_TOKEN", token)
+      .withSecretVariable("DENO_DEPLOY_TOKEN", token)
       .withDirectory("/src", source)
       .withWorkdir("/src")
       .withExec([
@@ -26,16 +31,15 @@ class Demo3 {
         "jsr:@deno/deployctl",
       ])
       .withExec(["deno", "fmt", "."])
-      .terminal()
-      // .withExec([
-      //   "deployctl",
-      //   "deploy",
-      //   "--prod",
-      //   "--project",
-      //   "meetup-2-staytuned",
-      //   "--entrypoint",
-      //   "main.ts",
-      // ]);
+      .withExec([
+        "deployctl",
+        "deploy",
+        prod ? "--prod" : "",
+        "--project",
+        "meetup-dagger-staytuned",
+        "--entrypoint",
+        "main.ts",
+      ]);
 
     return pipelineContainer.stdout();
   }
