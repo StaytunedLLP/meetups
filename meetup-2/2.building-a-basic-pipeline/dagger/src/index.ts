@@ -24,6 +24,7 @@ class Demo2 {
     return pipelineContainer.stdout();
   }
   // TODO: Exercise: Create a similar function to perform linting using dagger and then print the output
+  // command: `deno lint .`
   //   @func()
   //   async lint(): Promise<string> {}
 }
