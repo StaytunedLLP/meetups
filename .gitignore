@@ -1,0 +1,54 @@
+# Node.js
+node_modules/
+.cache/
+
+# Deno
+.deps/
+
+# Private and API Keys
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+*.pem
+*.key
+*.lock
+
+# Temporary Files
+tmp/
+*.log
+
+# IDE Specific Files
+# (adjust based on your IDE)
+.idea/
+
+# Build Output
+dist/
+out/
+build/
+
+# Test Coverage Reports
+coverage/
+*.lcov
+cov_*/
+
+# Drafts and Backups
+*.draft
+*.bak
+
+# Editor Temporary Files
+*.swp
+*.swo
+
+# OS Specific Files
+.DS_Store
+
+# Dependency Locking Files
+package-lock.json
+deno.lock.json
+
+# Version Control Metadata
+.git/
+
+.gh-workflows/ai-context

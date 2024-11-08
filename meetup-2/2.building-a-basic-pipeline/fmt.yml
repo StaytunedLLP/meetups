@@ -1,0 +1,25 @@
+name: meetup-2/2.building-a-basic-pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/fmt.yml
+      - meetup-2/**
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Call Local Dagger Module
+        uses: dagger/dagger-for-github@v6
+        with:
+          verb: call
+          module: meetup-2/2.building-a-basic-pipeline
+          args: format --source="meetup-2"
