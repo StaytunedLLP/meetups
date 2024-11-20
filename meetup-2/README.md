@@ -1,6 +1,7 @@
 # Meetup 2
 
-This directory contains the content and code for Meetup 2. The meetup is divided into several sections, each focusing on different aspects of using Dagger.
+This directory contains the content and code for Meetup 2. The meetup is divided
+into several sections, each focusing on different aspects of using Dagger.
 
 ## Sections
 

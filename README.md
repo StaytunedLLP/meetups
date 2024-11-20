@@ -1,6 +1,7 @@
 # meetups# Meetups
 
-This repository contains the content and code for various meetups. Each meetup is organized into its own directory with relevant materials and code examples.
+This repository contains the content and code for various meetups. Each meetup
+is organized into its own directory with relevant materials and code examples.
 
 ## Meetups
 

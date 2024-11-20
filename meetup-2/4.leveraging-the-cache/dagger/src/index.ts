@@ -1,9 +1,4 @@
-import {
-  dag,
-  Directory,
-  func,
-  object,
-} from "@dagger.io/dagger";
+import { dag, Directory, func, object } from "@dagger.io/dagger";
 
 @object()
 class Demo3 {

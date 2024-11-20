@@ -5,8 +5,8 @@ import {
   Directory,
   func,
   object,
+  Secret,
   Service,
-  Secret
 } from "@dagger.io/dagger";
 
 @object()
@@ -15,7 +15,7 @@ class Demo4 {
   async deploy(
     @argument({ defaultPath: "/" }) source: Directory,
     token: Secret,
-    prod: boolean
+    prod: boolean,
   ): Promise<string> {
     const pipelineContainer = dag
       .container()
