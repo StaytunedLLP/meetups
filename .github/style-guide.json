@@ -1,0 +1,278 @@
+{
+  "generalPrinciples": {
+    "purpose": "This style guide provides guidelines for generating consistent, readable, and maintainable TypeScript code that adheres to functional programming principles and follows the vertical slice architecture as implemented in your project, utilizing the Deno ecosystem.",
+    "audience": [
+      "AI models generating TypeScript code",
+      "Developers reviewing or integrating AI-generated code"
+    ],
+    "scope": {
+      "language": "TypeScript",
+      "architecture": "Vertical Slice Architecture as per your project's implementation",
+      "programmingParadigm": "Functional Programming",
+      "ecosystem": "Deno ecosystem (Deno Deploy, Deno Lume, Deno Fresh, etc.)"
+    }
+  },
+  "codeFormatting": {
+    "indentation": {
+      "useSpaces": true,
+      "spacesPerIndentation": 2,
+      "useTabs": false
+    },
+    "lineLength": {
+      "maxLength": 100
+    },
+    "braces": {
+      "style": "K&R",
+      "placement": "sameLine"
+    },
+    "spacing": {
+      "beforeOpeningBrace": true,
+      "betweenFunctionNameAndParameters": false,
+      "aroundOperators": true
+    },
+    "semicolons": {
+      "useSemicolons": false
+    },
+    "quotes": {
+      "preferred": "double"
+    },
+    "trailingCommas": {
+      "useTrailingCommas": false
+    }
+  },
+  "namingConventions": {
+    "variablesAndFunctions": "camelCase",
+    "classesAndTypes": "PascalCase",
+    "constants": "camelCase",
+    "interfaces": {
+      "style": "camelCase",
+      "prefixWithI": false
+    },
+    "fileAndDirectoryNames": "camelCase"
+  },
+  "comments": {
+    "singleLineComments": {
+      "usage": "Use for brief explanations",
+      "syntax": "//"
+    },
+    "multiLineComments": {
+      "usage": "Use for detailed explanations or to comment out blocks of code",
+      "syntax": "/* */"
+    },
+    "documentationComments": {
+      "usage": "Use JSDoc-style comments for functions, interfaces, and classes",
+      "syntax": "/** */"
+    },
+    "whenToUseComments": [
+      "Explain complex logic or algorithms",
+      "Document the purpose and usage of functions, modules, and classes",
+      "Provide context for non-obvious code segments",
+      "Avoid redundant comments that restate the code"
+    ]
+  },
+  "languageSpecificGuidelines": {
+    "typescriptBestPractices": [
+      "Always use explicit type annotations for function return types",
+      "Prefer 'interface' over 'type' when defining object shapes",
+      "Use 'readonly' for variables that should not be reassigned",
+      "Utilize 'enum' for predefined constants when appropriate"
+    ],
+    "functionalProgrammingPrinciples": [
+      "Write pure functions without side effects",
+      "Avoid shared mutable state",
+      "Use higher-order functions ('map', 'filter', 'reduce')",
+      "Favor immutability; avoid modifying data structures in place",
+      "Use function composition to build complex functionality from simpler functions"
+    ],
+    "asynchronousCode": {
+      "preferredSyntax": "async/await",
+      "errorHandling": "Use try/catch blocks within async functions"
+    },
+    "errorHandling": [
+      "Use 'Result' types or 'Either' monads to handle errors functionally",
+      "Avoid throwing exceptions in favor of returning error values"
+    ]
+  },
+  "denoEcosystemGuidelines": {
+    "standardLibraryUsage": "Prefer Deno's standard library modules over third-party libraries",
+    "moduleImports": [
+      "Use URL imports for external modules",
+      "Specify exact versions in import URLs to ensure consistency",
+      "use 'jsr:' prefix for standard library modules"
+    ],
+    "permissions": [
+      "Adhere to Deno's secure-by-default principles",
+      "Explicitly request necessary permissions when running code"
+    ],
+    "testing": {
+      "description": "Write tests using Deno's built-in bdd testing framework",
+      "example-code": [
+      "import { assertEquals } from \"jsr:@std/assert\";",
+      "import { isCompressible } from \"./compress.ts\";",
+      "import { describe, it } from \"jsr:@std/testing/bdd\";",
+      "",
+      "describe(\"isCompressible\", () => {",
+      "    it(\"should return true for compressible content type\", async () => {",
+      "        const contentType = \"text/html\";",
+      "        const result = await isCompressible(contentType);",
+      "        assertEquals(result, true);",
+      "    });",
+      "",
+      "    it(\"should return false for non-compressible content type\", async () => {",
+      "        const contentType = \"application/1d-interleaved-parityfec\";",
+      "        const result = await isCompressible(contentType);",
+      "        assertEquals(result, false);",
+      "    });",
+      "",
+      "    it(\"should return false for unknown content type\", async () => {",
+      "        const contentType = \"application/unknown\";",
+      "        const result = await isCompressible(contentType);",
+      "        assertEquals(result, false);",
+      "    });",
+      "});"
+      ]
+    }
+  },
+  "codeStructureAndOrganization": {
+    "verticalSliceArchitecture": {
+      "description": "Organize code according to the vertical slice architecture as implemented in your project",
+      "projectRoot": "Contains a 'src' directory which holds all source code",
+      "topLevelDirectories": [
+        "domain",
+        "api",
+        "blog",
+        "shared (may exist at any level)"
+      ]
+    },
+    "domains": {
+      "eachDomain": "Encapsulates code related to a specific area of the application",
+      "domainDirectoryIncludes": {
+        "features": "Contains all feature-specific code",
+        "routes": "Manages all routing related to the domain",
+        "shared": "Holds code that is common across all features within the domain",
+        "static": "Stores static files relevant to the domain"
+      }
+    },
+    "featuresAndSlices": {
+      "features": {
+        "description": "Inside the 'features' directory, each feature has its own directory",
+        "exampleFeatures": [
+          "productCatalog",
+          "cart",
+          "userRegistration"
+        ],
+        "eachFeatureDirectoryContains": {
+          "slices": "Holds subdirectories representing 'slices' of the feature",
+          "shared": "Code common to all slices within the feature"
+        }
+      },
+      "slices": {
+        "description": "A slice is a focused, vertical piece of functionality that includes all layers needed for that part of the feature",
+        "eachSliceDirectoryMayContain": [
+          "services",
+          "commands",
+          "tests",
+          "stateManagement",
+          "graphql",
+          "other relevant code"
+        ]
+      }
+    },
+    "sharedCode": {
+      "usage": "A 'shared' folder can exist at any level to hold common code accessible by multiple directories at that level",
+      "examples": {
+        "domainShared": "src/domain/shared/: Shared hooks, UI components, utilities across the domain",
+        "featureShared": "src/domain/features/[feature]/shared/: Code shared among slices within a feature"
+      }
+    },
+    "examplesOfFilePaths": [
+      {
+        "description": "Product Service in Product Catalog Feature",
+        "path": "src/domain/features/productCatalog/slices/fetchProducts/services/productService.ts"
+      },
+      {
+        "description": "Test for Getting Products from KV Store",
+        "path": "src/domain/features/productCatalog/slices/fetchProducts/commands/getProductsFromKV.test.ts"
+      },
+      {
+        "description": "Display Cart Component Test",
+        "path": "src/domain/features/cart/slices/displayCart/tests/index.tsx"
+      },
+      {
+        "description": "User Credentials State Management",
+        "path": "src/domain/features/userRegistration/slices/userRegistration/stateManagement/userCredentialsState.ts"
+      },
+      {
+        "description": "Register User GraphQL Mutation",
+        "path": "src/domain/features/userRegistration/slices/userRegistration/graphql/mutations/registerUserMutation.ts"
+      },
+      {
+        "description": "Product Catalog Route",
+        "path": "src/domain/routes/(productCatalog)/catalog.tsx"
+      },
+      {
+        "description": "User Login Route",
+        "path": "src/domain/routes/(userRegistration)/login.tsx"
+      },
+      {
+        "description": "Add to Cart Hook in Domain Shared",
+        "path": "src/domain/shared/hooks/addToCart.ts"
+      },
+      {
+        "description": "Browser Compatibility UI Component",
+        "path": "src/domain/shared/ui/islands/browserCompatibility.tsx"
+      },
+      {
+        "description": "GraphQL Query in API Features",
+        "path": "src/api/features/graphql/slices/queries/query.ts"
+      }
+    ],
+    "modulesAndFiles": [
+      "Limit each file to a single responsibility or module",
+      "Keep filenames descriptive and consistent with their contents",
+      "Use 'kebab-case' for file and directory names"
+    ],
+    "functions": {
+      "guidelines": [
+        "Keep functions small and focused on a single task",
+        "Use descriptive names that convey the function's purpose",
+        "Avoid functions longer than 20 lines; break them into smaller functions if necessary",
+        "Use destructured parameters for functions with multiple arguments"
+      ],
+      "example": "const createUser = ({ name, email }: { name: string; email: string }): User => { ... }"
+    }
+  },
+  "exampleCode": {
+    "file": "src/domain/features/productCatalog/slices/fetchProducts/services/productService.ts",
+    "code": [
+      "import { Product } from \"../../models/product.ts\"",
+      "import { getProductsFromKV } from \"../commands/getProductsFromKV.ts\"",
+      "",
+      "/**",
+      " * Service to fetch products from the KV store.",
+      " *",
+      " * @returns An array of Product objects.",
+      " */",
+      "export const productService = async (): Promise<Product[]> => {",
+      "  const products = await getProductsFromKV()",
+      "  return products",
+      "}"
+    ],
+    "explanation": [
+      "File Path: Reflects the vertical slice architecture with clear hierarchy.",
+      "Imports: Uses relative paths consistent with the directory structure.",
+      "Functional Style: 'productService' is a pure function without side effects.",
+      "TypeScript Practices: Explicit return types and proper use of interfaces or types.",
+      "Comments: Includes JSDoc comments for documentation."
+    ]
+  },
+  "keyConsiderations": [
+    "Consistency: Adhere strictly to the style guide to maintain uniformity across the codebase.",
+    "Readability: Write code that is easy to read and understand.",
+    "Simplicity: Favor simple solutions over complex ones.",
+    "Immutability: Prefer immutable data structures and avoid side effects.",
+    "Documentation: Keep code well-documented with clear comments and JSDoc where appropriate.",
+    "Organization: Follow the project's directory structure to organize code logically and cohesively.",
+    "Reusability: Utilize shared folders to promote code reuse and reduce duplication."
+  ]
+}
