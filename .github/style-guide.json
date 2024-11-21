@@ -9,7 +9,7 @@
       "language": "TypeScript",
       "architecture": "Vertical Slice Architecture as per your project's implementation",
       "programmingParadigm": "Functional Programming",
-      "ecosystem": "Deno ecosystem (Deno Deploy, Deno Lume, Deno Fresh, etc.)."
+      "ecosystem": "Deno ecosystem (Deno Deploy, Deno Lume, Deno Fresh, etc.)"
     }
   },
   "codeFormatting": {
