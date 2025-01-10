@@ -1,7 +1,7 @@
-name: "🔥 Now"
-description: "An urgent issue requiring immediate attention"
+name: 🛡️ Security
+description: Specific actions to be completed.
 title: "|"
-type: "Now 🔥"
+type: "Security 🛡️"
 projects: ["StaytunedLLP/43"]
 
 body:
@@ -13,21 +13,13 @@ body:
         
         1. 
 
-        ## Problem Statement
+        ## Outcome
 
         1.
 
-        ## Why this needs to be solved now?
-
-        1. 
-
-        ## Proposed Solution
+        ## Actions 
 
         
-
-        ## Alternatives Considered
-
-        1.
 
         ## Additional Context
 

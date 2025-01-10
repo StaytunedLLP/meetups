@@ -1,7 +1,7 @@
-name: 🏳 Initiative
-description: High-level strategic goals
+name: 🐞 Bug
+description: "An urgent issue requiring immediate attention"
 title: "|"
-type: "Initiative 🏳"
+type: "Bug 🐞"
 projects: ["StaytunedLLP/43"]
 
 body:
@@ -13,7 +13,19 @@ body:
         
         1. 
 
-        ## Objectives
+        ## Problem Statement
+
+        1.
+
+        ## Why this needs to be solved now?
+
+        1. 
+
+        ## Proposed Solution
+
+        
+
+        ## Alternatives Considered
 
         1.
 
@@ -23,7 +35,7 @@ body:
 
         ## Acceptance Criteria
 
-        1. 
+        1.
         
   - type: markdown
     attributes:

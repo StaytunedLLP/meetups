@@ -1,7 +1,7 @@
-name: 🧩 Feature
-description: New functionalities to be developed
+name: 🏳️ Flag
+description: Specific actions to be completed.
 title: "|"
-type: "Feature 🧩"
+type: "Flag 🏳️"
 projects: ["StaytunedLLP/43"]
 
 body:
@@ -9,33 +9,35 @@ body:
     attributes:
       label: Issue Description
       value: |
-        ## Feature Summary 
-        
-        1. 
+        ## Feature Flag Name/Identifier
 
-        ## Problem Statement
+        ## Purpose/Motivation
 
-        1.
+        ## Intended Behavior (When Enabled)
 
-        ## Proposed Solution
+        ## Intended Behavior (When Disabled)
 
-        
+        ## Rollout Strategy/Phases
 
-        ## Alternatives Considered
+        ## Activation Criteria
 
-        1.
+        ## Deactivation Criteria
 
-        ## Additional Context
+        ## Testing Considerations
 
-        1.
+        ## Monitoring/Metrics
+
+        ## Dependencies/Related Issues
+
+        ## Open Questions/Considerations
 
         ## Acceptance Criteria
 
-        1.
+        ## Alternatives Considered (Optional)
 
-        ## Feature Folder Location
+        ## Risks/Mitigations (Optional)
 
-        Add link here
+        ## Implementation Details (Optional)
         
   - type: markdown
     attributes:

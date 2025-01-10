@@ -1,7 +1,7 @@
-name: 🍰 🤖 Slice
-description: Smaller, manageable parts of a feature
+name: ⚡️ Initiative
+description: High-level strategic goals
 title: "|"
-type: "Slice 🍰 🤖"
+type: "Initiative ⚡️"
 projects: ["StaytunedLLP/43"]
 
 body:
@@ -9,14 +9,22 @@ body:
     attributes:
       label: Issue Description
       value: |
-        ## Slice Folder Location
+        ## Purpose
+        
+        1. 
 
-        Add link here
-
-        # Prompt
+        ## Objectives
 
         1.
 
+        ## Additional Context
+
+        1.
+
+        ## Acceptance Criteria
+
+        1. 
+        
   - type: markdown
     attributes:
       value: |
