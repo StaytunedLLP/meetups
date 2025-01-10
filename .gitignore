@@ -49,11 +49,10 @@ package-lock.json
 # Version Control Metadata
 .git/
 
+# extra files
 .gh-workflows/ai-context
 .github/ai-context
-# .github/Issues
 .github/Issues/issues.json
 .github/Issues/lastUpdated.json
-# .gh-workflows/Issues
 .gh-workflows/Issues/issues.json
 .gh-workflows/Issues/lastUpdated.json
