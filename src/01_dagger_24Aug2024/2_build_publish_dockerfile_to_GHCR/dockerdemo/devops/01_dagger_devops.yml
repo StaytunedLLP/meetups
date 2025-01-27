@@ -1,3 +1,5 @@
+# Move this file inside workflows for testing. Make sure you have added DOCKER_PASSWORD in secrets.
+
 name: 01_Dagger/ DevOps Package with Dagger
 
 on:
