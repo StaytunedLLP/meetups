@@ -11,7 +11,7 @@ class Ghademo {
         {
           onPushBranches: ["main"],
           secrets: ["DOCKER_PASSWORD"],
-          module: "./dockerdemo",
+          module: "../2_build_publish_dockerfile_to_GHCR/dockerdemo",
         },
       )
       .config();
