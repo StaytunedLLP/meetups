@@ -24,6 +24,6 @@ jobs:
           version: "latest"
           verb: call
           module: src/01_dagger_24Aug2024/2_build_publish_dockerfile_to_GHCR/dockerdemo/devops
-          args: build-and-push-image --dockerfile-path="devops.dockerfile" --contextDir="dockerfiles" --docker-password=env:DOCKER_PASSWORD --orgs="staytunedllp"
+          args: build-and-push-image --dockerfile-path="devops.dockerfile" --contextDir="src/01_dagger_24Aug2024/dockerfiles" --docker-password=env:DOCKER_PASSWORD --orgs="staytunedllp"
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
