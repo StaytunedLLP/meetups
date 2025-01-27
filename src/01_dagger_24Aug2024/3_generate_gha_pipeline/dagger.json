@@ -1,0 +1,12 @@
+{
+  "name": "ghademo",
+  "sdk": "typescript",
+  "dependencies": [
+    {
+      "name": "gha",
+      "source": "github.com/shykes/gha@a8671414892009ecdcadc84c8fed9d22984209bc"
+    }
+  ],
+  "source": "ghaconfig",
+  "engineVersion": "v0.12.5"
+}

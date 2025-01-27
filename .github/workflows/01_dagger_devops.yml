@@ -1,0 +1,29 @@
+name: 01_Dagger/ DevOps Package with Dagger
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/devops.yml
+      - src/01_dagger_24Aug2024/2_build_publish_dockerfile_to_GHCR/dockerdemo/**
+
+env:
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+jobs:
+  build-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Dagger
+        uses: dagger/dagger-for-github@v6
+        with:
+          version: "latest"
+          verb: call
+          module: dockerdemo/devops
+          args: build-and-push-image --dockerfile-path="devops.dockerfile" --contextDir="dockerfiles" --docker-password=env:DOCKER_PASSWORD --orgs="staytunedllp"
+        env:
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

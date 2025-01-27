@@ -1,0 +1,35 @@
+name: 01_Dagger/ Node Build without Dagger
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/01_dagger_node_build_wo_dagger.yml
+      - src/01_dagger_24Aug2024/1_building_nodejs/**
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./src/01_dagger_24Aug2024/1_building_nodejs/project
+
+      - name: Run tests
+        run: npm test
+        working-directory: ./src/01_dagger_24Aug2024/1_building_nodejs/project
+
+      - name: Build the project
+        run: npm run build
+        working-directory: ./src/01_dagger_24Aug2024/1_building_nodejs/project

@@ -1,0 +1,25 @@
+name: 01_Dagger / Node build | Dagger
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/01_dagger_node_build.yml
+      - .github/workflows/01_dagger_node_build_wo_dagger.yml/**
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Call Local Dagger Module
+        uses: dagger/dagger-for-github@v6
+        with:
+          verb: call
+          module: .github/workflows/01_dagger_node_build_wo_dagger.yml/nodebuild/
+          args: run-pipeline --source=".github/workflows/01_dagger_node_build_wo_dagger.yml/project"

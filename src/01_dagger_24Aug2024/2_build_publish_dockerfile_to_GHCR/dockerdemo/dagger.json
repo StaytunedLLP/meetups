@@ -1,0 +1,6 @@
+{
+  "name": "dockerdemo",
+  "sdk": "typescript",
+  "source": "devops",
+  "engineVersion": "v0.12.5"
+}
