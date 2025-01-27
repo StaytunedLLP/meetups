@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/01_dagger_node_build.yml
-      - .github/workflows/01_dagger_node_build_wo_dagger.yml/**
+      - src/01_dagger_24Aug2024/1_building_nodejs/**
   workflow_dispatch:
 
 jobs:
@@ -21,5 +21,5 @@ jobs:
         uses: dagger/dagger-for-github@v6
         with:
           verb: call
-          module: .github/workflows/01_dagger_node_build_wo_dagger.yml/nodebuild/
-          args: run-pipeline --source=".github/workflows/01_dagger_node_build_wo_dagger.yml/project"
+          module: src/01_dagger_24Aug2024/1_building_nodejs/nodebuild/
+          args: run-pipeline --source="src/01_dagger_24Aug2024/1_building_nodejs/project"

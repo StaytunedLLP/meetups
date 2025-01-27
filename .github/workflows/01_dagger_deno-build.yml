@@ -21,5 +21,5 @@ jobs:
         uses: dagger/dagger-for-github@v6
         with:
           verb: call
-          module: nodedemo/nodebuild/
+          module: src/01_dagger_24Aug2024/1_building_nodejs/nodebuild/
           args: run-deno --source="src/01_dagger_24Aug2024/1_building_nodejs/project-deno"

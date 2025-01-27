@@ -40,7 +40,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ env.PACKAGE_NAME }}-${{ matrix.architecture }}-${{ hashFiles('dockerfiles/devops.dockerfile') }}
+          key: ${{ runner.os }}-buildx-${{ env.PACKAGE_NAME }}-${{ matrix.architecture }}-${{ hashFiles('src/01_dagger_24Aug2024/dockerfiles/devops.dockerfile') }}
           restore-keys: |
             ${{ runner.os }}-buildx-${{ env.PACKAGE_NAME }}-${{ matrix.architecture }}-
             ${{ runner.os }}-buildx-
@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: dockerfiles/devops.dockerfile
+          file: src/01_dagger_24Aug2024/dockerfiles/devops.dockerfile
           platforms: linux/${{ matrix.architecture }}
           push: false
           tags: ${{ env.PACKAGE_NAME }}:${{ matrix.architecture }}-latest
