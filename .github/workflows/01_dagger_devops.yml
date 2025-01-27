@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - .github/workflows/devops.yml
+      - .github/workflows/01_dagger_devops.yml
       - src/01_dagger_24Aug2024/2_build_publish_dockerfile_to_GHCR/dockerdemo/**
 
 env:
