@@ -16,15 +16,15 @@ In this section, we will learn how to leverage caching in Dagger pipelines.
 ## Commands
 
 ```bash
-dagger functions -m meetup-2/4.leveraging-the-cache
+dagger functions -m src/02_dagger_08Nov2024/4.leveraging-the-cache
 ```
 
 ```bash
-dagger call -m meetup-2/4.leveraging-the-cache format --help
+dagger call -m src/02_dagger_08Nov2024/4.leveraging-the-cache format --help
 ```
 
 ```bash
-dagger call -m meetup-2/4.leveraging-the-cache format
+dagger call -m src/02_dagger_08Nov2024/4.leveraging-the-cache format
 ```
 
 ```bash
@@ -45,7 +45,7 @@ EOF
 ```
 
 ```bash
-dagger call -m meetup-2/4.leveraging-the-cache format
+dagger call -m src/02_dagger_08Nov2024/4.leveraging-the-cache format
 ```
 
 [Back to Meetup 2](../README.md)

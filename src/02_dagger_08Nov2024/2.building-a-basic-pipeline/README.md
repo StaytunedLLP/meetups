@@ -18,15 +18,15 @@ In this section, we will build a basic pipeline using Dagger.
 ## Commands
 
 ```bash
-dagger functions -m meetup-2/2.building-a-basic-pipeline
+dagger functions -m src/02_dagger_08Nov2024/2.building-a-basic-pipeline
 ```
 
 ```bash
-dagger call -m meetup-2/2.building-a-basic-pipeline format --help
+dagger call -m src/02_dagger_08Nov2024/2.building-a-basic-pipeline format --help
 ```
 
 ```bash
-dagger call -m meetup-2/2.building-a-basic-pipeline format --help
+dagger call -m src/02_dagger_08Nov2024/2.building-a-basic-pipeline format --source=.
 ```
 
 [Back to Meetup 2](../README.md)

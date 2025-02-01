@@ -22,15 +22,15 @@ pipelines.
 ## Commands
 
 ```bash
-dagger functions -m meetup-2/1.setting-up-your-enviroment
+dagger functions -m src/02_dagger_08Nov2024/1.setting-up-your-enviroment
 ```
 
 ```bash
-dagger call -m meetup-2/1.setting-up-your-enviroment container-echo --help
+dagger call -m src/02_dagger_08Nov2024/1.setting-up-your-enviroment container-echo --help
 ```
 
 ```bash
-dagger call -m meetup-2/1.setting-up-your-enviroment container-echo --string-arg="hello-world"
+dagger call -m src/02_dagger_08Nov2024/1.setting-up-your-enviroment container-echo --string-arg="hello-world"
 ```
 
 [Back to Meetup 2](../README.md)

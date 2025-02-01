@@ -19,15 +19,19 @@ In this section, we will learn how to manage secrets in Dagger pipelines.
 ## Commands
 
 ```bash
-dagger functions -m meetup-2/3.secrets-management
+dagger functions -m src/02_dagger_08Nov2024/3.secrets-management
 ```
 
 ```bash
-dagger call -m meetup-2/3.secrets-management deploy --help
+export DENO_DEPLOY_TOKEN=abcdefghijklmnopqrstuvwxyz
 ```
 
 ```bash
-dagger call -m meetup-2/3.secrets-management deploy --prod=true --token=env:"DENO_DEPLOY_TOKEN" --source=meetup-2/3.secrets-management/project-deno
+dagger call -m src/02_dagger_08Nov2024/3.secrets-management deploy --help
+```
+
+```bash
+dagger call -m src/02_dagger_08Nov2024/3.secrets-management deploy --prod=true --token=env:"DENO_DEPLOY_TOKEN" --source=src/02_dagger_08Nov2024/3.secrets-management/project-deno
 ```
 
 [Back to Meetup 2](../README.md)
