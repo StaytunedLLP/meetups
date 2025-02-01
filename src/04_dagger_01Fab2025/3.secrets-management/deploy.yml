@@ -1,0 +1,25 @@
+name: meetup-2/3.secrets-management
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/fmt.yml
+      - meetup-2/**
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Call Local Dagger Module
+        uses: dagger/dagger-for-github@v6
+        with:
+          verb: call
+          module: meetup-2/3.secrets-management
+          args: deploy --token="${{DENO_DEPLOY_TOKEN}}" --prod=true --source=meetup-2/3.secrets-management/project-deno

@@ -1,0 +1,6 @@
+{
+  "name": "demo2",
+  "sdk": "typescript",
+  "source": "dagger",
+  "engineVersion": "0.15.3"
+}
